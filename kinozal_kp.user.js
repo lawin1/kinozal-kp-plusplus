@@ -29,6 +29,7 @@
 
 	let svg = `<svg enable-background="new 0 0 70 70" version="1.1" viewBox="0 0 70 70" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m35 0c-19.3 0-35 15.7-35 35s15.7 35 35 35 35-15.7 35-35-15.7-35-35-35zm-13.3 13.5c4.7 0 8.4 3.7 8.4 8.4s-3.7 8.4-8.4 8.4-8.4-3.7-8.4-8.4c0.1-4.7 3.8-8.4 8.4-8.4zm0 43c-4.7 0-8.4-3.7-8.4-8.4s3.7-8.4 8.4-8.4 8.4 3.7 8.4 8.4c-0.1 4.7-3.8 8.4-8.4 8.4zm9.7-17.9c-2-2-2-5.3 0-7.3s5.3-2 7.3 0 2 5.3 0 7.3-5.3 2.1-7.3 0zm16.9 17.9c-4.7 0-8.4-3.7-8.4-8.4s3.7-8.4 8.4-8.4 8.4 3.7 8.4 8.4c-0.1 4.7-3.8 8.4-8.4 8.4zm0-26.4c-4.7 0-8.4-3.7-8.4-8.4s3.7-8.4 8.4-8.4 8.4 3.7 8.4 8.4c-0.1 4.7-3.8 8.4-8.4 8.4z" fill="#ffffff"/></svg>`;
 	let base64svg = `PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA3MCA3MCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNzAgNzAiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTM1IDBjLTE5LjMgMC0zNSAxNS43LTM1IDM1czE1LjcgMzUgMzUgMzUgMzUtMTUuNyAzNS0zNS0xNS43LTM1LTM1LTM1em0tMTMuMyAxMy41YzQuNyAwIDguNCAzLjcgOC40IDguNHMtMy43IDguNC04LjQgOC40LTguNC0zLjctOC40LTguNGMwLjEtNC43IDMuOC04LjQgOC40LTguNHptMCA0M2MtNC43IDAtOC40LTMuNy04LjQtOC40czMuNy04LjQgOC40LTguNCA4LjQgMy43IDguNCA4LjRjLTAuMSA0LjctMy44IDguNC04LjQgOC40em05LjctMTcuOWMtMi0yLTItNS4zIDAtNy4zczUuMy0yIDcuMyAwIDIgNS4zIDAgNy4zLTUuMyAyLjEtNy4zIDB6bTE2LjkgMTcuOWMtNC43IDAtOC40LTMuNy04LjQtOC40czMuNy04LjQgOC40LTguNCA4LjQgMy43IDguNCA4LjRjLTAuMSA0LjctMy44IDguNC04LjQgOC40em0wLTI2LjRjLTQuNyAwLTguNC0zLjctOC40LTguNHMzLjctOC40IDguNC04LjQgOC40IDMuNyA4LjQgOC40Yy0wLjEgNC43LTMuOCA4LjQtOC40IDguNHoiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=`;
+	let base64svg_imdb = `PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZpZXdCb3g9IjAgMCAzMiAzMiIgc3R5bGU9Ii1tcy10cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7Ij48cGF0aCBkPSJNMTkuMDc4IDEyLjc4NnYuMDA1Yy0uMDk5LS4wNjMtLjMwMi0uMDk0LS41NTctLjA5NHY2LjQyMmMuMzU5IDAgLjU4My0uMDgzLjY2Ny0uMjI0Yy4wODMtLjEzNS4xMjUtLjUzNi4xMjUtMS4xNzd2LTMuODIzYzAtLjQzOC0uMDA1LS43MTktLjA0Mi0uODM5Yy0uMDMxLS4xMy0uMDg5LS4yMTktLjE4OC0uMjcxek0yOS44ODUgMEgyLjE2MUEyLjI5OSAyLjI5OSAwIDAgMCAwIDIuMTN2MjcuNzA4Yy4wNzggMS4xNjcuOTQ4IDIuMDU3IDIuMDczIDIuMTU2Yy4wMjEuMDA1LjA0Mi4wMDUuMDYzLjAwNWgyNy43OTJhMi4zMDMgMi4zMDMgMCAwIDAgMi4wNzMtMi4yODFWMi4yOGEyLjMgMi4zIDAgMCAwLTIuMTE1LTIuMjgxek02LjM5MSAyMC44MzNIMy44NDl2LTkuODE4aDIuNTQyem04LjcxOCAwaC0yLjIxNHYtNi42M2wtLjg5NiA2LjYyNWgtMS41ODNsLS45MzItNi40NzlsLS4wMSA2LjQ3OUg3LjI1NXYtOS44MTNoMy4yODZjLjExNS42OTMuMjE0IDEuMzk2LjMwNyAyLjA5OWwuMzU5IDIuNDlsLjU5NC00LjU4OWgzLjMwN3ptNi42MzYtMi45MDZjMCAuODctLjA1NyAxLjQ1OC0uMTQxIDEuNzZhMS4yNzMgMS4yNzMgMCAwIDEtLjQzMi42OTNhMS42MzIgMS42MzIgMCAwIDEtLjc2LjM1NGMtLjI5Ny4wNTctLjc2LjA5OS0xLjM1OS4wOTlsLS4wMDUtLjAwNWgtMy4wNzN2LTkuODEzaDEuOTAxYzEuMjE5IDAgMS45MzIuMDYzIDIuMzU5LjE2N2MuNDMyLjEyLjc2Ni4zMDIuOTk1LjU2M2MuMjE5LjI0LjM2NS41MzYuNDE3Ljg1OWMuMDY4LjMxMy4wOTkuOTM4LjA5OSAxLjg3em02LjU5NC42M2MwIC41OTktLjA2MyAxLjAyMS0uMTIgMS4zMjNjLS4wODMuMjk3LS4yNi41MzYtLjU0Mi43NTVjLS4zMDIuMjI0LS42NDEuMzIzLTEuMDQyLjMyM2MtLjI5MiAwLS42NjctLjA4My0uOTA2LS4xODJhMi4xOTIgMi4xOTIgMCAwIDEtLjY4OC0uNTczbC0uMTUxLjYzaC0yLjI5MnYtOS44MThsLS4wMjYtLjAwNWgyLjQwMXYzLjE5OGMuMTk4LS4yMzQuNDIyLS40MTEuNjc3LS41MzFhMi42MiAyLjYyIDAgMCAxIC45MjItLjE3MmMuMzAyIDAgLjU5OS4wNDcuODguMTU2Yy4yMjkuMDk0LjQyNy4yNDUuNTgzLjQzOGMuMTIuMTY3LjE5OC4zNTkuMjQuNTYzYy4wMzYuMTgyLjA1Ny41NzMuMDU3IDEuMTU2djIuNzR6bS0yLjkwMS0zLjYxOWMtLjE1NiAwLS4yNTUuMDU3LS4yOTcuMTYxYy0uMDQyLjEwOS0uMDc4LjM4NS0uMDc4LjgzM3YyLjU5NGMwIC40MzIuMDM2LjcxNC4wNzguODMzYS4zMTIuMzEyIDAgMCAwIC4zMDIuMTc3Yy4xNTYgMCAuMzU5LS4wNjMuNDAxLS4xODhjLjAzNi0uMTMuMDU3LS40MjcuMDU3LS44OTZsLjA0Mi0uMDA1di0yLjUyMWMwLS40MDEtLjAyMS0uNjc3LS4wNzgtLjgwMmMtLjA2My0uMTM1LS4yNi0uMTg4LS40MjItLjE4OHoiIGZpbGw9IndoaXRlIi8+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJyZ2JhKDAsIDAsIDAsIDApIiAvPjwvc3ZnPg==`;
 
 	let styles = `
 
@@ -54,12 +55,12 @@
 		overflow: hidden;
 	}
 	.element__rating-div {
-		opacity: 1;
+		opacity: 0.85;
 		cursor: default;
-		min-width: 50%;
-		min-height: 55px;
+		min-width: 100%;
+		min-height: 25px;
 		width: auto;
-		border-radius: 4px 0 0 0;
+		/* border-radius: 4px 0 0 0; */
 		transform: translate(0, 0);
 		left: auto;
 		right: 0;
@@ -67,7 +68,7 @@
 		box-sizing: border-box;
 	}
 	.element__rating-div .element__preloder {
-		border-radius: 4px 0 0 0;
+		/* border-radius: 4px 0 0 0; */
 	}
 	.element__rating-button:hover {
 		background-color: ${props._brand};
@@ -82,7 +83,8 @@
 		margin: 0 !important;
 	}
 	.element__wrapper:hover > .element__rating-button {
-		opacity: 1;
+		opacity: 0.85;
+		text-shadow: 1px 1px 2px #222222;
 	}
 	.element__wrapper::after {
 		content: " "
@@ -102,7 +104,7 @@
 		transition: all ${props.transition};
 	}
 	.element__preloader svg {
-		height: 50px;
+		height: 25px;
 		fill: ${props._brand};
 		animation: linear 2s rotate infinite;
 	}
@@ -110,7 +112,8 @@
 		fill: ${props._brand};
 	}
 	.static {
-		opacity: 1;
+		opacity: 0.85;
+		text-shadow: 1px 1px 2px #222222;
 		background-color: ${props.brand};
 		line-height: 20px;
 	}
@@ -118,8 +121,19 @@
 		content: url('data:image/svg+xml;base64, ${base64svg}');
 		width: 28px;
 		position: absolute;
-		bottom: -15px;
-		left: -10px;
+		bottom: -5px;
+		left: -5px;
+		-webkit-filter: drop-shadow(5px 5px 5px #222222);
+		filter: drop-shadow(5px 5px 5px #222222);
+	}
+	.static::after {
+		content: url('data:image/svg+xml;base64, ${base64svg_imdb}');
+		width: 28px;
+		position: absolute;
+		bottom: -7px;
+		right: 2px;
+		-webkit-filter: drop-shadow(-5px 5px 5px #222222);
+		filter: drop-shadow(-5px 5px 5px #222222);
 	}
 	.static:hover {
 		background-color: ${props.brand} !important;
@@ -272,8 +286,7 @@
 
 	function createRatingRender(kp_rating, imdb_rating, element) {
 		let h = `
-			<span class="final__rating">КП: ${kp_rating}</span>
-			<span class="final__rating">IMDb: ${imdb_rating}</span>
+			<span class="final__rating"; span style="text-align:left;margin-left: 30px;">${kp_rating}<span style="float:right;margin-right: 35px;">${imdb_rating}</span>
 			`;
 		//для кнопки в топе
 		if(element.srcElement !== undefined) {
