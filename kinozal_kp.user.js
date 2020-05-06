@@ -123,8 +123,8 @@
 		position: absolute;
 		bottom: -5px;
 		left: -5px;
-		-webkit-filter: drop-shadow(5px 5px 5px #222222);
-		filter: drop-shadow(5px 5px 5px #222222);
+		-webkit-filter: drop-shadow(0px 0px 5px #222222);
+		filter: drop-shadow(0px 0px 5px #222222);
 	}
 	.static::after {
 		content: url('data:image/svg+xml;base64, ${base64svg_imdb}');
@@ -132,8 +132,8 @@
 		position: absolute;
 		bottom: -7px;
 		right: 2px;
-		-webkit-filter: drop-shadow(-5px 5px 5px #222222);
-		filter: drop-shadow(-5px 5px 5px #222222);
+		-webkit-filter: drop-shadow(0px 0px 5px #222222);
+		filter: drop-shadow(0px 0px 5px #222222);
 	}
 	.static:hover {
 		background-color: ${props.brand} !important;
