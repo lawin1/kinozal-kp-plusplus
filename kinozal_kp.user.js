@@ -25,6 +25,7 @@
 		transition: '.1s ease',
 		buttonText: 'Рейтинг',
 		requestText: 'Получить рейтинг',
+		iconHeight: '28px'
 	}
 
 	let svg = `<svg enable-background="new 0 0 70 70" version="1.1" viewBox="0 0 70 70" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m35 0c-19.3 0-35 15.7-35 35s15.7 35 35 35 35-15.7 35-35-15.7-35-35-35zm-13.3 13.5c4.7 0 8.4 3.7 8.4 8.4s-3.7 8.4-8.4 8.4-8.4-3.7-8.4-8.4c0.1-4.7 3.8-8.4 8.4-8.4zm0 43c-4.7 0-8.4-3.7-8.4-8.4s3.7-8.4 8.4-8.4 8.4 3.7 8.4 8.4c-0.1 4.7-3.8 8.4-8.4 8.4zm9.7-17.9c-2-2-2-5.3 0-7.3s5.3-2 7.3 0 2 5.3 0 7.3-5.3 2.1-7.3 0zm16.9 17.9c-4.7 0-8.4-3.7-8.4-8.4s3.7-8.4 8.4-8.4 8.4 3.7 8.4 8.4c-0.1 4.7-3.8 8.4-8.4 8.4zm0-26.4c-4.7 0-8.4-3.7-8.4-8.4s3.7-8.4 8.4-8.4 8.4 3.7 8.4 8.4c-0.1 4.7-3.8 8.4-8.4 8.4z" fill="#ffffff"/></svg>`;
@@ -32,7 +33,6 @@
 	let base64svg_imdb = `PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZpZXdCb3g9IjAgMCAzMiAzMiIgc3R5bGU9Ii1tcy10cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7Ij48cGF0aCBkPSJNMTkuMDc4IDEyLjc4NnYuMDA1Yy0uMDk5LS4wNjMtLjMwMi0uMDk0LS41NTctLjA5NHY2LjQyMmMuMzU5IDAgLjU4My0uMDgzLjY2Ny0uMjI0Yy4wODMtLjEzNS4xMjUtLjUzNi4xMjUtMS4xNzd2LTMuODIzYzAtLjQzOC0uMDA1LS43MTktLjA0Mi0uODM5Yy0uMDMxLS4xMy0uMDg5LS4yMTktLjE4OC0uMjcxek0yOS44ODUgMEgyLjE2MUEyLjI5OSAyLjI5OSAwIDAgMCAwIDIuMTN2MjcuNzA4Yy4wNzggMS4xNjcuOTQ4IDIuMDU3IDIuMDczIDIuMTU2Yy4wMjEuMDA1LjA0Mi4wMDUuMDYzLjAwNWgyNy43OTJhMi4zMDMgMi4zMDMgMCAwIDAgMi4wNzMtMi4yODFWMi4yOGEyLjMgMi4zIDAgMCAwLTIuMTE1LTIuMjgxek02LjM5MSAyMC44MzNIMy44NDl2LTkuODE4aDIuNTQyem04LjcxOCAwaC0yLjIxNHYtNi42M2wtLjg5NiA2LjYyNWgtMS41ODNsLS45MzItNi40NzlsLS4wMSA2LjQ3OUg3LjI1NXYtOS44MTNoMy4yODZjLjExNS42OTMuMjE0IDEuMzk2LjMwNyAyLjA5OWwuMzU5IDIuNDlsLjU5NC00LjU4OWgzLjMwN3ptNi42MzYtMi45MDZjMCAuODctLjA1NyAxLjQ1OC0uMTQxIDEuNzZhMS4yNzMgMS4yNzMgMCAwIDEtLjQzMi42OTNhMS42MzIgMS42MzIgMCAwIDEtLjc2LjM1NGMtLjI5Ny4wNTctLjc2LjA5OS0xLjM1OS4wOTlsLS4wMDUtLjAwNWgtMy4wNzN2LTkuODEzaDEuOTAxYzEuMjE5IDAgMS45MzIuMDYzIDIuMzU5LjE2N2MuNDMyLjEyLjc2Ni4zMDIuOTk1LjU2M2MuMjE5LjI0LjM2NS41MzYuNDE3Ljg1OWMuMDY4LjMxMy4wOTkuOTM4LjA5OSAxLjg3em02LjU5NC42M2MwIC41OTktLjA2MyAxLjAyMS0uMTIgMS4zMjNjLS4wODMuMjk3LS4yNi41MzYtLjU0Mi43NTVjLS4zMDIuMjI0LS42NDEuMzIzLTEuMDQyLjMyM2MtLjI5MiAwLS42NjctLjA4My0uOTA2LS4xODJhMi4xOTIgMi4xOTIgMCAwIDEtLjY4OC0uNTczbC0uMTUxLjYzaC0yLjI5MnYtOS44MThsLS4wMjYtLjAwNWgyLjQwMXYzLjE5OGMuMTk4LS4yMzQuNDIyLS40MTEuNjc3LS41MzFhMi42MiAyLjYyIDAgMCAxIC45MjItLjE3MmMuMzAyIDAgLjU5OS4wNDcuODguMTU2Yy4yMjkuMDk0LjQyNy4yNDUuNTgzLjQzOGMuMTIuMTY3LjE5OC4zNTkuMjQuNTYzYy4wMzYuMTgyLjA1Ny41NzMuMDU3IDEuMTU2djIuNzR6bS0yLjkwMS0zLjYxOWMtLjE1NiAwLS4yNTUuMDU3LS4yOTcuMTYxYy0uMDQyLjEwOS0uMDc4LjM4NS0uMDc4LjgzM3YyLjU5NGMwIC40MzIuMDM2LjcxNC4wNzguODMzYS4zMTIuMzEyIDAgMCAwIC4zMDIuMTc3Yy4xNTYgMCAuMzU5LS4wNjMuNDAxLS4xODhjLjAzNi0uMTMuMDU3LS40MjcuMDU3LS44OTZsLjA0Mi0uMDA1di0yLjUyMWMwLS40MDEtLjAyMS0uNjc3LS4wNzgtLjgwMmMtLjA2My0uMTM1LS4yNi0uMTg4LS40MjItLjE4OHoiIGZpbGw9IndoaXRlIi8+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJyZ2JhKDAsIDAsIDAsIDApIiAvPjwvc3ZnPg==`;
 
 	let styles = `
-
 	<style>
 	.element__rating-button,
 	.element__rating-div{
@@ -44,6 +44,7 @@
 		width: 100%;
 		box-sizing: border-box;
 		line-height: 25px;
+		min-height: ${props.iconHeight};
 		transform: translate(-50%, 0);
 		background-color: ${props.brand};
 		border: 0;
@@ -119,18 +120,22 @@
 	}
 	.static::before {
 		content: url('data:image/svg+xml;base64, ${base64svg}');
-		width: 28px;
+		width: ${props.iconHeight};
+		height: ${props.iconHeight};
 		position: absolute;
-		bottom: -5px;
+		top: 50%;
+		transform: translate(0, -50%);
 		left: -5px;
 		-webkit-filter: drop-shadow(0px 0px 5px #222222);
 		filter: drop-shadow(0px 0px 5px #222222);
 	}
 	.static::after {
 		content: url('data:image/svg+xml;base64, ${base64svg_imdb}');
-		width: 28px;
+		width: ${props.iconHeight};
+		height: ${props.iconHeight};
 		position: absolute;
-		bottom: -7px;
+		top: 50%;
+		transform: translate(0, -50%);
 		right: 2px;
 		-webkit-filter: drop-shadow(0px 0px 5px #222222);
 		filter: drop-shadow(0px 0px 5px #222222);
@@ -150,6 +155,13 @@
 	.tp1_desc > .tp1_a {
 		float: right;
 	}
+
+	/* Увеличим немного картинку элемента в топе */
+	//.element__wrapper { min-width: 100px; }
+	//.element__wrapper a { display: block; width: 100%; }
+	//.stable a img { width: 150px; height: 250px;}
+	/* Увеличим немного картинку элемента в топе end */
+
 	@keyframes rotate {
 		from {
 			transform: rotate(0deg);
@@ -159,7 +171,6 @@
 		}
 	}
 	</style>
-
 	`;
 
 	$('body').prepend(styles);
@@ -285,8 +296,17 @@
 	}
 
 	function createRatingRender(kp_rating, imdb_rating, element) {
-		let h = `
-			<span class="final__rating"; span style="text-align:left;margin-left: 30px;">${kp_rating}<span style="float:right;margin-right: 35px;">${imdb_rating}</span>
+		let h_top = `
+			<span class="final__rating">
+				<span>${kp_rating}</span>
+				<span>${imdb_rating}</span>
+			</span>
+			`;
+		let h_main_page = `
+			<span class="final__rating clearfix">
+				<span style="float:left; margin-left:30px;">${kp_rating}</span>
+				<span style="float:right; margin-right:30px;">${imdb_rating}</span>
+			</span>
 			`;
 		//для кнопки в топе
 		if(element.srcElement !== undefined) {
@@ -294,14 +314,14 @@
 				element.srcElement.classList += ' static';
 			}
 
-			element.srcElement.innerHTML = h;
+			element.srcElement.innerHTML = h_top;
 			element.srcElement.title = `Кинопоиск: ${kp_rating}, IMDb: ${imdb_rating}`;
 		//для главной страницы (0-20)
 		} else {
 			if(!element.hasClass('static')) {
 				element.addClass('static');
 			}
-			$(element).html(h);
+			$(element).html(h_main_page);
 		}
 	}
 
