@@ -284,7 +284,8 @@ const reGetRating = false; //отключает повторное нажати�
 		if(kp_matches[0]) {
 			kp_rating = createRating(kp_matches[0].input);
 		} else {
-			kp_rating = 'n/a';
+			/*kp_rating = 'n/a';*/
+			kp_rating = '-';
 		}
 
 		return createRatingRender(kp_rating, imdb_rating, element);
